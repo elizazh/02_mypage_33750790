@@ -1,5 +1,7 @@
 const http = require("http");
-const port = 8001;
+
+//  8000 on the VM; works locally
+const port = process.env.PORT || 8000;
 
 const html = `<!doctype html>
 <html>
@@ -8,10 +10,13 @@ const html = `<!doctype html>
     <title>MyPage — 02_mypage_33750790</title>
   </head>
   <body>
-    <h1>hi, i’m ELIZAHUSSAIN </h1>
+    <h1>hi, i’m ELIZAHUSSAIN</h1>
     <h2>Dynamic Web Apps — MyPage</h2>
 
-    <p><strong>about me:</strong> goldsmiths student (ehuss003), coffee-fueled, javascript-curious, and currently vibing with node + github. </p>
+    <p><strong>about me:</strong> goldsmiths student (ehuss003), coffee-fueled, javascript-curious, and currently vibing with node + github.</p>
+
+    <h3>my interests</h3>
+    <p>I like to travel and I also like working for myself on my current business/brand.</p>
 
     <p>Node server running.</p>
   </body>
@@ -23,5 +28,3 @@ http
     res.end(html);
   })
   .listen(port, () => console.log(`http://localhost:${port}`));
-
-  
